@@ -1,0 +1,85 @@
+---
+layout: base.njk
+title: Home
+description: "Curated product recommendations and expert advice. Browse our store for the best deals on Amazon."
+bodyClass: home
+permalink: /
+---
+
+{# AI AGENT: The homepage is your most important page for conversions.
+   Make it compelling, specific to your niche, and action-oriented.
+   Don't be generic — speak directly to your audience's pain points and desires.
+   Feel free to completely restructure this page for your niche. #}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>{{ site.name }}</h1>
+    <p class="hero-tagline">{{ site.tagline or '' }}</p>
+    <p class="hero-sub">
+      Black soldier flies are tropical insects. Most cold-climate operators give up
+      after their first overwintering attempt — adults won't mate without sun-equivalent
+      light, larvae chill out below 60&nbsp;°F, and outdoor bins freeze. This site
+      documents an indoor rig that closes the loop: a quartz worklight as a
+      mating-trigger, a mesh love cage on a heat mat, a bin on substrate, a
+      self-harvest ramp into a collection cup. Built and run from a 5b homestead.
+    </p>
+    <p class="hero-ctas">
+      <a href="/blog/?tag=setup" class="btn btn-primary">See the indoor setup</a>
+      <a href="/store/?category=starter-kits" class="btn btn-secondary">Starter kit gear</a>
+    </p>
+  </div>
+</section>
+
+<!-- Category Grid — auto-populated from store.json
+     AI AGENT: Categories are pulled dynamically. If you want custom icons or
+     descriptions, add "icon" and "description" fields to each category in store.json. -->
+<section class="categories-grid">
+  <h2>Shop by Category</h2>
+  <div class="hero-cats">
+    {% if store and store.categories and store.categories.length %}
+      {% for cat in store.categories %}
+      <a href="/store/?category={{ cat.id }}" class="hero-cat">
+        <span class="hc-icon">{{ cat.icon or '&#128230;' }}</span>
+        <span class="hc-name">{{ cat.name }}</span>
+      </a>
+      {% endfor %}
+    {% else %}
+      {# AI AGENT: This fallback shows when store.json has no categories yet.
+         Replace this once you've added categories to store.json. #}
+      <a href="/store/" class="hero-cat">
+        <span class="hc-icon">&#128722;</span>
+        <span class="hc-name">Browse All Products</span>
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Value Propositions
+     AI AGENT: Rewrite these to be specific to your niche. Generic "curated selection"
+     copy doesn't convert. Tell people WHY your niche knowledge makes your picks better.
+     Examples: "We've tested 40+ telescopes" or "Recommendations from 10 years of beekeeping" -->
+<section class="featured">
+  <h2>Why this site exists</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Real indoor colony</h3>
+      <p>Every recommendation comes from a working indoor rig in USDA 5b — not a tropical demonstration farm.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Cold-climate first</h3>
+      <p>If a method only works in Florida or a heated greenhouse, we say so. Indoor-only protocols are flagged separately.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Cited, not invented</h3>
+      <p>Light/temperature/humidity numbers are sourced from peer-reviewed entomology and university extensions. See the knowledge base.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Honest gear reviews</h3>
+      <p>We're an Amazon Associates partner. Products we recommend are products we actually use on this rig — failures and dead-ends included.</p>
+    </div>
+  </div>
+</section>

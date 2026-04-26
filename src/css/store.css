@@ -1,0 +1,19 @@
+/* Store-specific overrides — loaded only on store page
+   AI AGENT: Customize the store layout here. Consider:
+   - Product card size and grid columns
+   - Sidebar width and styling
+   - Mobile breakpoints for your content density
+   - Hover effects that match your brand personality */
+
+/* Remove default page padding for full-width store layout */
+#main-content:has(.store-layout) {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+}
+
+/* Override container padding for store */
+.container:has(.store-layout) {
+  padding: 0;
+  max-width: none;
+}

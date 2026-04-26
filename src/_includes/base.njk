@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - {{ site.name }}</title>
+
+  {# Affiliate tag read by cart.js, store.js, kits.js at runtime #}
+  <meta name="affiliate-tag" content="{{ site.affiliateTag or '' }}">
+
+  <meta name="description" content="{{ description or site.description or '' }}">
+  {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+
+  {# Canonical URL — prevents duplicate content penalties #}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  {# Open Graph Tags #}
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title }} - {{ site.name }}">
+  <meta property="og:description" content="{{ description or site.description or '' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/images/og-image.png">
+  <meta property="og:type" content="website">
+
+  {# Twitter/X Card Tags #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} - {{ site.name }}">
+  <meta name="twitter:description" content="{{ description or site.description or '' }}">
+  <meta name="twitter:image" content="{{ site.url }}/images/og-image.png">
+
+  {% if site.googleSiteVerification %}
+  <meta name="google-site-verification" content="{{ site.googleSiteVerification }}">
+  {% endif %}
+
+  {# RSS feed for blog — enables content aggregators and feed readers #}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Blog" href="{{ site.url }}/feed.xml">
+
+  {# Favicons — AI AGENT: Replace this inline SVG with your brand's favicon files.
+     Add favicon.ico, favicon-16.png, favicon-32.png, favicon-192.png, apple-touch-icon.png
+     to src/ and uncomment the link tags below. The inline SVG is a placeholder. #}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232c5f2d'/><text x='16' y='24' font-size='22' text-anchor='middle' fill='white'>A</text></svg>">
+  {#
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  #}
+
+  {# Google Fonts — AI AGENT: Update this URL for your chosen fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="{{ site.googleFontsUrl or 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Droid+Serif:ital@0;1&family=Lato:ital,wght@0,400;0,700;1,400&display=swap' }}" rel="stylesheet">
+
+  {# Preconnect to Amazon for faster affiliate link loads #}
+  <link rel="preconnect" href="https://www.amazon.com">
+
+  {# Stylesheets #}
+  <link rel="stylesheet" href="/css/style.css">
+  {% if extraCss %}
+  <link rel="stylesheet" href="{{ extraCss }}">
+  {% endif %}
+
+  {# Organization Schema (JSON-LD) #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": {{ site.name | safeDump | safe }},
+    "url": {{ site.url | safeDump | safe }},
+    "description": {{ (site.description or '') | safeDump | safe }},
+    "logo": "{{ site.url }}/images/og-image.png"
+  }
+  </script>
+</head>
+<body class="{% if bodyClass %}{{ bodyClass }}{% endif %}">
+  {# Skip to content link — accessibility requirement #}
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <input type="checkbox" id="mobile-trigger" class="mobile-trigger" aria-hidden="true">
+
+  <div id="main-wrap">
+    {# Header Navigation #}
+    <div id="header-wrap" class="banner-wrap">
+      <nav class="header-nav" aria-label="Main navigation">
+        {% for item in navigation %}
+          <a href="{{ item.url }}" class="nav-item">{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+      <label for="mobile-trigger" class="mobile-menu-toggle" aria-label="Open menu" role="button" tabindex="0">
+        <span class="hamburger" aria-hidden="true">&#9776;</span>
+      </label>
+    </div>
+
+    {# Site Header/Banner
+       AI AGENT: Make this section your own — hero image, logo, custom illustration.
+       Note: site-title is a <p> not <h1> to avoid duplicate H1s with page headings. #}
+    <header class="banner">
+      <p class="site-title">
+        <a href="/">{{ site.name }}</a>
+      </p>
+      <p class="tagline">{{ site.tagline or '' }}</p>
+    </header>
+
+    {# Main Content #}
+    <main id="main-content" class="container">
+      {{ content | safe }}
+    </main>
+
+    {# Footer #}
+    {% include "footer.njk" %}
+  </div>
+
+  {# Mobile Navigation Panel #}
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    {% for item in navigation %}
+      <a href="{{ item.url }}" class="mobile-nav-item">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+
+  {# Scripts — defer to avoid blocking render #}
+  <script src="/js/main.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+
+  {# ASIN map is injected on the store page (store.njk) where it's needed.
+     cart.js gracefully handles missing map (falls back to empty object).
+     On non-store pages, cart checkout falls back to Amazon search by product name. #}
+</body>
+</html>

@@ -1,0 +1,72 @@
+---
+layout: base.njk
+---
+{# AI AGENT: This is the blog post layout. It wraps every markdown file in src/blog/.
+   Customize the article structure, sidebar, and metadata display for your niche.
+   Consider adding:
+   - Author bio section
+   - Related posts sidebar
+   - Table of contents for long posts
+   - Product recommendation cards inline
+   - Social sharing buttons #}
+
+<article class="article-hero">
+  {% if tags and tags.length %}
+  <div class="eyebrow">{{ tags[0] }}</div>
+  {% endif %}
+  <h1>{{ title }}</h1>
+  {% if description %}
+  <p class="subtitle">{{ description }}</p>
+  {% endif %}
+  <div class="meta">
+    {% if author %}By {{ author }}{% endif %}
+    {% if date %} &mdash; {{ date | date("Y-m-d") }}{% endif %}
+  </div>
+</article>
+
+<div class="article-layout">
+  <div class="article-body">
+    {{ content | safe }}
+
+    {# Affiliate disclosure at bottom of every post (required by Amazon Associates) #}
+    <p class="affiliate-note">
+      <em>As an Amazon Associate, {{ site.name }} earns from qualifying purchases.
+      Product prices and availability are subject to change.
+      <a href="/disclosure/">Full affiliate disclosure.</a></em>
+    </p>
+  </div>
+
+  {# AI AGENT: Add a sidebar with related products, table of contents,
+     or newsletter signup. Remove if your design doesn't use sidebars. #}
+  <aside class="article-sidebar">
+    <div class="sidebar-box">
+      <h4>About {{ site.name }}</h4>
+      <p style="font-size:0.9em;color:#777;line-height:1.5">
+        {{ site.description or 'Expert product recommendations you can trust.' }}
+      </p>
+      <a href="/store/" class="btn" style="display:block;text-align:center;margin-top:12px">Browse Our Store</a>
+    </div>
+  </aside>
+</div>
+
+{# Structured Data for Blog Post (JSON-LD)
+   AI AGENT: This helps search engines show rich snippets for your articles. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | safeDump | safe }},
+  "description": {{ (description or '') | safeDump | safe }},
+  "author": {
+    "@type": "Person",
+    "name": {{ (author or site.seo.author or site.name) | safeDump | safe }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.name | safeDump | safe }},
+    "url": {{ site.url | safeDump | safe }}
+  },
+  "datePublished": "{{ date | date('Y-m-d') }}",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>

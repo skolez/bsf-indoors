@@ -1,0 +1,51 @@
+# ===== Node.js & Dependencies =====
+node_modules/
+yarn.lock
+
+# ===== Build Output =====
+# Eleventy generates the _site/ folder—never commit compiled output
+_site/
+
+# ===== Testing & Coverage =====
+coverage/
+.nyc_output/
+
+# ===== Environment & Secrets =====
+# Never commit .env files with API keys, affiliate tags, or tokens
+.env
+.env.local
+.env.*.local
+
+# ===== OS Files =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===== Python (if using any Python build tools) =====
+*.pyc
+__pycache__/
+*.pyo
+*.egg-info/
+.Python
+
+# ===== IDE & Editor =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+
+# ===== Cloudflare & Wrangler =====
+.wrangler/
+dist/
+
+# ===== Development Files =====
+.env.example  # Keep example (without secrets)
+.tmp/

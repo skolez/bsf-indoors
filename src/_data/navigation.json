@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Home",
+    "url": "/"
+  },
+  {
+    "label": "Store",
+    "url": "/store/"
+  },
+  {
+    "label": "Indoor Setup",
+    "url": "/blog/?tag=setup"
+  },
+  {
+    "label": "Breeding",
+    "url": "/blog/?tag=breeding"
+  },
+  {
+    "label": "Blog",
+    "url": "/blog/"
+  },
+  {
+    "label": "About",
+    "url": "/about/"
+  },
+  {
+    "label": "Contact",
+    "url": "/contact/"
+  }
+]

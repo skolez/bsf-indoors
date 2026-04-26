@@ -1,0 +1,63 @@
+{# AI AGENT: Customize the footer layout, columns, and content to match your niche.
+   Social links and categories are driven by data — no hardcoding needed.
+   Feel free to add/remove columns, change the layout, or add unique elements. #}
+<footer class="footer">
+  <div class="footer-content">
+    {# Quick Links Column #}
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        {% for item in navigation %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {# Popular Categories Column — dynamically populated from store.json
+       AI AGENT: These links are auto-generated from your store categories.
+       If store.categories is empty, this section shows a fallback. #}
+    <div class="footer-column">
+      <h3>Popular Categories</h3>
+      <ul>
+        {% if store and store.categories and store.categories.length %}
+          {% for cat in store.categories %}
+            <li><a href="/store/?category={{ cat.id }}">{{ cat.name }}</a></li>
+          {% endfor %}
+        {% else %}
+          <li><a href="/store/">Browse All Products</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    {# Social Links Column — dynamically populated from site.json
+       AI AGENT: Only social platforms with URLs will be shown.
+       Add more platforms by adding them to site-config.json social section. #}
+    <div class="footer-column">
+      <h3>Connect</h3>
+      <ul>
+        {% if site.social %}
+          {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}" class="social-link" rel="noopener" target="_blank">Facebook</a></li>{% endif %}
+          {% if site.social.instagram %}<li><a href="{{ site.social.instagram }}" class="social-link" rel="noopener" target="_blank">Instagram</a></li>{% endif %}
+          {% if site.social.twitter %}<li><a href="{{ site.social.twitter }}" class="social-link" rel="noopener" target="_blank">Twitter / X</a></li>{% endif %}
+          {% if site.social.youtube %}<li><a href="{{ site.social.youtube }}" class="social-link" rel="noopener" target="_blank">YouTube</a></li>{% endif %}
+          {% if site.social.pinterest %}<li><a href="{{ site.social.pinterest }}" class="social-link" rel="noopener" target="_blank">Pinterest</a></li>{% endif %}
+          {% if site.social.tiktok %}<li><a href="{{ site.social.tiktok }}" class="social-link" rel="noopener" target="_blank">TikTok</a></li>{% endif %}
+        {% endif %}
+        <li><a href="/contact/">Contact Us</a></li>
+      </ul>
+    </div>
+
+    {# Affiliate Disclosure Column #}
+    <div class="footer-column">
+      <h3>Shop Via</h3>
+      <p>We are a participant in the Amazon Services LLC Associates Program.</p>
+      <p><a href="/disclosure/">Affiliate Disclosure</a></p>
+    </div>
+  </div>
+
+  {# Footer Bottom #}
+  <div class="footer-bottom">
+    <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+    <p><a href="/disclosure/">Affiliate Disclosure</a></p>
+  </div>
+</footer>

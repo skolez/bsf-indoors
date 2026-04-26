@@ -1,0 +1,47 @@
+{
+  "_agentNote": "Categories mirror the four pieces of gear in a working indoor BSF rig (light + cage + bin + ramp) plus consumables and reading. Keep this list short and operationally meaningful — the audience is people building a real setup, not browsing.",
+  "categories": [
+    {
+      "id": "starter-kits",
+      "name": "Indoor BSF Starter Kits",
+      "icon": "📦",
+      "description": "Complete love-cage + light + bin + ramp bundles to start a colony from scratch."
+    },
+    {
+      "id": "mating-light",
+      "name": "Mating Lights",
+      "icon": "💡",
+      "description": "Quartz halogen worklights, UVA/UVB reptile bulbs, and LED+UV combos that trigger indoor copulation."
+    },
+    {
+      "id": "love-cage",
+      "name": "Love Cages & Adult Enclosures",
+      "icon": "🦟",
+      "description": "Mesh enclosures sized and ventilated for adult black soldier flies."
+    },
+    {
+      "id": "larvae-bin",
+      "name": "Larvae Bins & Self-Harvest Ramps",
+      "icon": "🪣",
+      "description": "Bins, ramps, and migration channels for active larvae and passive prepupae harvest."
+    },
+    {
+      "id": "feedstock",
+      "name": "Feedstock & Substrate",
+      "icon": "🥕",
+      "description": "Bedding (aspen, coco coir), oviposition media, and starter feed when food scraps aren't enough."
+    },
+    {
+      "id": "monitoring",
+      "name": "Temperature, Humidity & Light Meters",
+      "icon": "🌡️",
+      "description": "Hygrometers, thermostats, lux/UV meters — the cheap instruments that decide whether a colony breeds."
+    },
+    {
+      "id": "books",
+      "name": "Books & Research",
+      "icon": "📚",
+      "description": "Standard references on Hermetia illucens biology and mass rearing."
+    }
+  ]
+}

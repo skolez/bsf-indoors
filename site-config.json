@@ -1,0 +1,70 @@
+{
+  "_agentInstructions": "BSF Indoors site config. Part of the skolez insect-affiliate portfolio (see ../farmable-insects/README.md). Anchored by firsthand operation: indoor BSFL colony, indoor mating cage, prepupae self-harvest. Do not regenerate without consulting that roadmap.",
+  "niche": "indoor black soldier fly (BSF) farming",
+  "site": {
+    "name": "BSF Indoors",
+    "domain": "bsfindoors.com",
+    "tagline": "Year-round black soldier fly farming, no greenhouse required",
+    "description": "Firsthand guides, gear reviews, and breeding protocols for keeping a self-sustaining black soldier fly larvae (BSFL) colony indoors — including indoor mating, lighting, prepupae self-harvest, and feedstock troubleshooting."
+  },
+  "region": {
+    "_agentNote": "BSF farming itself is climate-controlled, so 'region' here refers to the cold-climate audience for whom indoor operation is the differentiator. Cache Valley operator; addresses readers in any climate where outdoor BSF is impractical.",
+    "name": "Cache Valley, Utah",
+    "climateZone": "USDA 5b, semi-arid, ~4,500 ft elevation, long cold winters",
+    "states": ["UT", "ID", "WY", "MT", "CO"]
+  },
+  "audience": {
+    "primary": "Backyard/homestead operators in cold climates who want a year-round BSFL colony for chicken/fish feed, composting, and frass — without an outdoor or greenhouse setup",
+    "secondary": "Aquaponics hobbyists, vermiculture overlap audiences, off-grid and food-resilience readers, small-scale alternative-protein curious"
+  },
+  "affiliate": {
+    "tag": "skolez0c3-20",
+    "network": "amazon",
+    "yescartgo": {
+      "enabled": true,
+      "apiBase": "https://yescartgo.skolez.workers.dev",
+      "_agentNote": "Enabled for kit builder (love cage + light + bin + ramp bundle is a natural kit)."
+    }
+  },
+  "theme": {
+    "_agentNote": "BSF visual cues: dark iridescent blue-black adults, warm decomposition browns, frass amber. Avoid the worm-farm green palette; this niche is closer to entomology/lab aesthetic than to garden aesthetic.",
+    "primaryColor": "#1f2a3a",
+    "primaryColorDark": "#0f1622",
+    "accentColor": "#c97b3a",
+    "accentColorDark": "#9a5a26",
+    "goldColor": "#d8a64a",
+    "backgroundColor": "#faf7f2",
+    "creamColor": "#f3ede2",
+    "textColor": "#3a3a3a",
+    "textDark": "#1a1a1a",
+    "borderColor": "#e0d8c8",
+    "fontBody": "'Inter', system-ui, -apple-system, sans-serif",
+    "fontSerif": "'Lora', Georgia, serif",
+    "fontDisplay": "'Fraunces', 'Lora', Georgia, serif",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Fraunces:wght@500;600;700&display=swap",
+    "maxWidth": "1100px"
+  },
+  "navigation": [
+    { "label": "Home", "url": "/" },
+    { "label": "Store", "url": "/store/" },
+    { "label": "Indoor Setup", "url": "/blog/?tag=setup" },
+    { "label": "Breeding", "url": "/blog/?tag=breeding" },
+    { "label": "Blog", "url": "/blog/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+  "social": {
+    "_agentNote": "Populate as accounts are created. Portfolio strategy is photos/video archived during real homestead work, deployed across whichever channels make sense.",
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "twitter": "",
+    "pinterest": "",
+    "tiktok": ""
+  },
+  "googleSiteVerification": "",
+  "seo": {
+    "defaultAuthor": "BSF Indoors",
+    "defaultKeywords": "black soldier fly indoors, indoor BSFL farming, BSF mating indoors, BSF love cage, BSF UV light, prepupae self-harvest, BSF chicken feed, hermetia illucens indoor"
+  }
+}

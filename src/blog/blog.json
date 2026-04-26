@@ -1,0 +1,6 @@
+{
+  "layout": "post.njk",
+  "tags": "posts",
+  "permalink": "/blog/{{ page.fileSlug }}/",
+  "_agentNote": "AI AGENT: This file sets defaults for all blog posts. Every .md file in src/blog/ automatically gets the post.njk layout and is tagged as 'posts' for the blog index collection."
+}

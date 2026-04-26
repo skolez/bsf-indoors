@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Blog
+description: "Expert guides, product reviews, and buying advice. Browse our latest posts."
+bodyClass: blog
+permalink: /blog/
+---
+
+{# AI AGENT: This is the blog index page. It lists all posts from the "posts" collection
+   (any .md file in src/blog/ with the "posts" tag, which blog.json adds automatically).
+
+   Customize the hero section and card layout for your niche. Consider adding:
+   - Category/tag filtering
+   - Featured post at the top
+   - Search functionality
+   - Pagination for large catalogs (Eleventy supports this natively) #}
+
+<div class="blog-hero">
+  <h1>{{ site.name }} Blog</h1>
+  <p>Expert advice, product reviews, and guides to help you make the best choices.</p>
+</div>
+
+<div class="blog-list">
+  {%- for post in collections.posts | reverse -%}
+  <article class="blog-card">
+    {% if post.data.tags and post.data.tags.length > 1 %}
+    <div class="eyebrow">{{ post.data.tags[1] }}</div>
+    {% endif %}
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    {% if post.data.description %}
+    <p>{{ post.data.description }}</p>
+    {% endif %}
+    <a href="{{ post.url }}" class="read-more">Read more &rarr;</a>
+  </article>
+  {%- endfor -%}
+
+  {% if not collections.posts or collections.posts.length == 0 %}
+  <div class="store-welcome">
+    <h2>Coming Soon</h2>
+    <p>We're working on expert guides and product reviews. Check back soon!</p>
+  </div>
+  {% endif %}
+</div>

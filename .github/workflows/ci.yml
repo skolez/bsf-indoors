@@ -1,0 +1,51 @@
+# CI — Build validation and test suite
+#
+# Runs on:
+#   - Every push to any branch (catches problems early)
+#   - Every pull request (gate before merge)
+#
+# This workflow transfers to forked sites with zero configuration.
+
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify build output
+        run: |
+          echo "Checking build output..."
+          test -f _site/index.html || { echo "ERROR: index.html missing"; exit 1; }
+          test -f _site/store/index.html || { echo "ERROR: store page missing"; exit 1; }
+          test -f _site/sitemap.xml || { echo "ERROR: sitemap missing"; exit 1; }
+          test -f _site/robots.txt || { echo "ERROR: robots.txt missing"; exit 1; }
+          PAGE_COUNT=$(find _site -name '*.html' | wc -l)
+          echo "Build output OK — ${PAGE_COUNT} HTML files"
+          if [ "$PAGE_COUNT" -lt 5 ]; then
+            echo "ERROR: Expected at least 5 HTML pages, got ${PAGE_COUNT}"
+            exit 1
+          fi

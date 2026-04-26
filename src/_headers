@@ -1,0 +1,30 @@
+# Cloudflare Pages custom headers
+# These are applied automatically by Cloudflare Pages on deploy.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Cache static assets aggressively (CSS, JS, images, fonts)
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000
+
+# HTML pages: always revalidate (ensures fresh content)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# RSS feed: cache for 1 hour
+/feed.xml
+  Cache-Control: public, max-age=3600
+
+# Security headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin

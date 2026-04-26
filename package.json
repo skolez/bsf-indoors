@@ -1,0 +1,33 @@
+{
+  "name": "bsf-indoors",
+  "version": "0.1.0",
+  "description": "BSF Indoors — firsthand indoor black soldier fly farming guides, gear reviews, and breeding protocols. Part of the skolez insect-affiliate portfolio.",
+  "author": "BSF Indoors",
+  "license": "MIT",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "test": "jest --verbose --forceExit",
+    "validate": "npm run build && npm test",
+    "setup": "node scripts/setup.js",
+    "deploy": "npm run validate && wrangler pages deploy _site",
+    "ci": "npm ci && npm run validate"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "jest": "^30.3.0",
+    "jsdom": "^25.0.1"
+  },
+  "keywords": [
+    "affiliate",
+    "niche-site",
+    "niche-authority",
+    "eleventy",
+    "amazon-associates",
+    "static-site-generator",
+    "cloudflare-pages"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

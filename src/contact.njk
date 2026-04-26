@@ -1,0 +1,141 @@
+---
+layout: base.njk
+title: Contact Us
+bodyClass: contact
+permalink: /contact/
+---
+
+{# AI AGENT: Customize this page for your niche. Update the email address,
+   social media links, and FAQs to be relevant to your audience.
+   Consider adding a contact form via Formspree, Basin, or Netlify Forms. #}
+
+<article class="page-content">
+  <h1>Contact Us</h1>
+
+  <p>
+    Have a question about our product recommendations or our site?
+    We'd love to hear from you!
+  </p>
+
+  <section class="contact-info">
+    <h2>Get In Touch</h2>
+
+    <div class="contact-methods">
+      <div class="contact-method">
+        <h3>Email</h3>
+        {# AI AGENT: Replace with your actual contact email #}
+        <p><a href="mailto:hello@{{ site.url | replace('https://', '') }}">hello@{{ site.url | replace('https://', '') }}</a></p>
+        <p class="note">We try to respond to all emails within 24 hours.</p>
+      </div>
+
+      {% if site.social %}
+      <div class="contact-method">
+        <h3>Social Media</h3>
+        <ul>
+          {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener">Facebook</a></li>{% endif %}
+          {% if site.social.instagram %}<li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a></li>{% endif %}
+          {% if site.social.twitter %}<li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter / X</a></li>{% endif %}
+          {% if site.social.youtube %}<li><a href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a></li>{% endif %}
+          {% if site.social.pinterest %}<li><a href="{{ site.social.pinterest }}" target="_blank" rel="noopener">Pinterest</a></li>{% endif %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    {# AI AGENT: Replace these generic FAQs with questions specific to your niche.
+       Think about what your target audience actually asks. #}
+
+    <div class="faq-item">
+      <h3>How can I buy a product?</h3>
+      <p>
+        All products on our site are available through Amazon. Simply click on any product
+        to be taken to its Amazon listing where you can complete your purchase.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you ship internationally?</h3>
+      <p>
+        Shipping depends on the individual product and Amazon's policies.
+        Check the product page on Amazon for your region's availability.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I return a product?</h3>
+      <p>
+        Return policies are determined by Amazon. Check the product listing for
+        specific return information.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Are your recommendations unbiased?</h3>
+      <p>
+        Yes. We choose products based on quality and value. Our affiliate relationship
+        with Amazon means we earn a commission from sales, but this doesn't influence
+        our recommendations. <a href="/disclosure/">Read our full disclosure.</a>
+      </p>
+    </div>
+  </section>
+
+  {# FAQ structured data (JSON-LD) — helps FAQs appear in Google "People Also Ask" #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can I buy a product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All products on our site are available through Amazon. Simply click on any product to be taken to its Amazon listing where you can complete your purchase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you ship internationally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Shipping depends on the individual product and Amazon's policies. Check the product page on Amazon for your region's availability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I return a product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Return policies are determined by Amazon. Check the product listing for specific return information."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your recommendations unbiased?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We choose products based on quality and value. Our affiliate relationship with Amazon means we earn a commission from sales, but this doesn't influence our recommendations."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <section class="contact-form-section">
+    <h2>Send us a Message</h2>
+    {# AI AGENT: Set up a contact form using Formspree (free tier), Basin, or similar.
+       Uncomment and update the form below with your service's endpoint.
+
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    #}
+    <p class="note">Contact form coming soon. In the meantime, reach out via email above.</p>
+  </section>
+</article>

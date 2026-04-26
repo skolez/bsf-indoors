@@ -1,0 +1,61 @@
+[
+  {
+    "_agentNote": "Placeholder products — categories and IDs are real; ASINs and prices intentionally omitted until each product is reviewed and shortlisted. Tests skip ASIN and price checks when those fields are absent. Replace each entry with a real Amazon product as it's chosen. Tracked in BLOCKED.md."
+  },
+  {
+    "id": "halogen-worklight",
+    "name": "Quartz Halogen Worklight (UV-passing)",
+    "category": "mating-light",
+    "categoryName": "Mating Lights",
+    "image": "/images/setup/worklight-uv-filter-removed.jpg",
+    "description": "Stand-style halogen worklight. With the protective glass / UV filter removed, the bare quartz envelope passes enough UVA to trigger BSF copulation indoors. Replace with the specific tested model once review is complete."
+  },
+  {
+    "id": "reptile-uvb-bulb",
+    "name": "Reptile UVA/UVB Bulb (10.0)",
+    "category": "mating-light",
+    "categoryName": "Mating Lights",
+    "image": "/images/placeholder.jpg",
+    "description": "Standard reptile UVB bulb used as an alternative to halogen for indoor BSF mating cages. Lower output but safer for continuous indoor use."
+  },
+  {
+    "id": "butterfly-mesh-cage",
+    "name": "Pop-Up Mesh Butterfly Cage (24\")",
+    "category": "love-cage",
+    "categoryName": "Love Cages & Adult Enclosures",
+    "image": "/images/setup/love-cage-mesh-enclosure.jpg",
+    "description": "Collapsible mesh butterfly enclosure repurposed as a BSF love cage. Adequate volume and ventilation for a small breeding population; clear panel for inspecting oviposition strips."
+  },
+  {
+    "id": "self-harvest-bin",
+    "name": "Self-Harvest BSF Bin with Ramp",
+    "category": "larvae-bin",
+    "categoryName": "Larvae Bins & Self-Harvest Ramps",
+    "image": "/images/setup/self-harvest-ramp-prepupae.jpg",
+    "description": "Bin with integrated migration ramp that lets prepupae self-harvest into a separate collection chamber when they're ready to pupate."
+  },
+  {
+    "id": "aspen-bedding",
+    "name": "Shredded Aspen Bedding",
+    "category": "feedstock",
+    "categoryName": "Feedstock & Substrate",
+    "image": "/images/setup/larvae-bin-feedstock.jpg",
+    "description": "Dust-extracted aspen shavings used as moisture-buffering bedding under wet food scraps. Helps prevent anaerobic conditions and odor."
+  },
+  {
+    "id": "digital-hygrometer",
+    "name": "Digital Hygrometer / Thermometer",
+    "category": "monitoring",
+    "categoryName": "Temperature, Humidity & Light Meters",
+    "image": "/images/placeholder.jpg",
+    "description": "Bin-mountable hygrometer for keeping larval substrate in the 60-70% RH window."
+  },
+  {
+    "id": "uv-lux-meter",
+    "name": "UV Index / Lux Meter",
+    "category": "monitoring",
+    "categoryName": "Temperature, Humidity & Light Meters",
+    "image": "/images/placeholder.jpg",
+    "description": "Cheap meter to compare bare halogen vs. reptile UVB bulb output at cage distance."
+  }
+]

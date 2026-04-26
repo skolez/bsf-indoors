@@ -1,0 +1,133 @@
+# Deploy — Publishes to Cloudflare Pages
+#
+# Production deploy: push to main/master → deploys to production URL
+# Preview deploy: pull request → deploys to unique preview URL (posted as PR comment)
+#
+# This workflow ONLY runs after CI passes (uses workflow_run trigger for production,
+# and runs its own build+test for preview deploys on PRs).
+#
+# Setup (one-time per forked site):
+# 1. Create a Cloudflare Pages project: `npx wrangler pages project create YOUR-SLUG`
+# 2. Add GitHub repository secrets (Settings > Secrets > Actions):
+#    - CLOUDFLARE_API_TOKEN: API token with "Cloudflare Pages:Edit" permission
+#    - CLOUDFLARE_ACCOUNT_ID: Your Cloudflare account ID
+# 3. Update PROJECT_NAME below to match your Pages project name
+#
+# AI AGENT: After forking, update PROJECT_NAME and add the two secrets.
+
+name: Deploy
+
+on:
+  # Production deploy: only after CI workflow succeeds on main/master
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main, master]
+
+  # Preview deploy: on every PR (runs its own build+test)
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: deploy-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  # AI AGENT: Change this to your Cloudflare Pages project name.
+  # Must match "name" in wrangler.jsonc.
+  PROJECT_NAME: bsf-indoors
+
+jobs:
+  # ─── Production Deploy (after CI passes) ───────────────────
+  production:
+    if: >
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: Install and build
+        run: npm ci && npm run build
+
+      - name: Deploy to production
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=${{ env.PROJECT_NAME }}
+
+  # ─── Preview Deploy (on PRs) ──────────────────────────────
+  preview:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: Install, build, test
+        run: npm ci && npm run build && npm test
+
+      - name: Deploy preview
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=${{ env.PROJECT_NAME }} --branch=${{ github.head_ref }}
+
+      - name: Comment preview URL on PR
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const branch = context.payload.pull_request.head.ref;
+            const projectName = process.env.PROJECT_NAME;
+            const previewUrl = `https://${branch}.${projectName}.pages.dev`;
+            const body = `**Preview deploy ready**\n\n${previewUrl}\n\n_Deployed from commit ${context.sha.substring(0, 7)}_`;
+
+            // Check if we already commented
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+            const existing = comments.data.find(c => c.body.includes('Preview deploy ready'));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body,
+              });
+            }
