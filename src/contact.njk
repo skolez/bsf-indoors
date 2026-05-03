@@ -1,42 +1,40 @@
 ---
 layout: base.njk
-title: Contact Us
+title: Contact
+description: "Get in touch with BSF Indoors — questions about indoor black soldier fly farming, gear recommendations, or cold-climate breeding setups."
 bodyClass: contact
 permalink: /contact/
 ---
 
-{# AI AGENT: Customize this page for your niche. Update the email address,
-   social media links, and FAQs to be relevant to your audience.
-   Consider adding a contact form via Formspree, Basin, or Netlify Forms. #}
-
 <article class="page-content">
-  <h1>Contact Us</h1>
+  <h1>Contact</h1>
 
   <p>
-    Have a question about our product recommendations or our site?
-    We'd love to hear from you!
+    Got a question about your indoor BSF rig, your love cage temperature, your
+    self-harvest yields, or whether a specific piece of gear is worth buying?
+    Email is the fastest way to reach us.
   </p>
 
   <section class="contact-info">
-    <h2>Get In Touch</h2>
+    <h2>Get in touch</h2>
 
     <div class="contact-methods">
       <div class="contact-method">
         <h3>Email</h3>
-        {# AI AGENT: Replace with your actual contact email #}
-        <p><a href="mailto:hello@{{ site.url | replace('https://', '') }}">hello@{{ site.url | replace('https://', '') }}</a></p>
-        <p class="note">We try to respond to all emails within 24 hours.</p>
+        <p><a href="mailto:hello@bsfindoors.com">hello@bsfindoors.com</a></p>
+        <p class="note">We try to respond within a few days. Photos of your setup help a lot.</p>
       </div>
 
-      {% if site.social %}
+      {% if site.social and (site.social.facebook or site.social.instagram or site.social.twitter or site.social.youtube or site.social.pinterest or site.social.tiktok) %}
       <div class="contact-method">
-        <h3>Social Media</h3>
+        <h3>Social</h3>
         <ul>
           {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener">Facebook</a></li>{% endif %}
           {% if site.social.instagram %}<li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a></li>{% endif %}
           {% if site.social.twitter %}<li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter / X</a></li>{% endif %}
           {% if site.social.youtube %}<li><a href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a></li>{% endif %}
           {% if site.social.pinterest %}<li><a href="{{ site.social.pinterest }}" target="_blank" rel="noopener">Pinterest</a></li>{% endif %}
+          {% if site.social.tiktok %}<li><a href="{{ site.social.tiktok }}" target="_blank" rel="noopener">TikTok</a></li>{% endif %}
         </ul>
       </div>
       {% endif %}
@@ -44,40 +42,57 @@ permalink: /contact/
   </section>
 
   <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    {# AI AGENT: Replace these generic FAQs with questions specific to your niche.
-       Think about what your target audience actually asks. #}
+    <h2>Common questions</h2>
 
     <div class="faq-item">
-      <h3>How can I buy a product?</h3>
+      <h3>Can BSF really be raised indoors year-round in a cold climate?</h3>
       <p>
-        All products on our site are available through Amazon. Simply click on any product
-        to be taken to its Amazon listing where you can complete your purchase.
+        Yes — peer-reviewed protocols (Diener et al.; Oonincx et al. 2018)
+        document successful low-cost, year-round laboratory rearing, and
+        hobbyists are doing it in 5b basements with off-the-shelf gear. The
+        operating constraint is the cage microclimate (25–32&nbsp;°C, 50–60% RH,
+        12&nbsp;h of bright full-spectrum light), not your outdoor weather.
       </p>
     </div>
 
     <div class="faq-item">
-      <h3>Do you ship internationally?</h3>
+      <h3>Do I need a UV reptile bulb, or will a regular halogen work?</h3>
       <p>
-        Shipping depends on the individual product and Amazon's policies.
-        Check the product page on Amazon for your region's availability.
+        A quartz halogen worklight with the protective glass removed passes
+        enough UVA to trigger BSF mating — Tomberlin &amp; Sheppard (2010)
+        measured ~61% of sunlight efficacy. Reptile UVA/UVB bulbs work too,
+        and BSF-tuned LEDs (Hoc 2020) actually outperformed halogen in
+        controlled tests. The "best" choice depends on cage volume, distance,
+        and how much heat you can dump in your room.
       </p>
     </div>
 
     <div class="faq-item">
-      <h3>Can I return a product?</h3>
+      <h3>How big does the love cage need to be?</h3>
       <p>
-        Return policies are determined by Amazon. Check the product listing for
-        specific return information.
+        The often-cited benchmark is a 1.5&nbsp;m vertical flight column for
+        male display behavior, but practical hobbyist setups run successfully
+        in 60–120&nbsp;cm cages. Bigger is better up to a point; a 48&nbsp;in
+        butterfly tent is a workable starter size for ≤200 adults.
       </p>
     </div>
 
     <div class="faq-item">
-      <h3>Are your recommendations unbiased?</h3>
+      <h3>Are recommendations on this site unbiased?</h3>
       <p>
-        Yes. We choose products based on quality and value. Our affiliate relationship
-        with Amazon means we earn a commission from sales, but this doesn't influence
-        our recommendations. <a href="/disclosure/">Read our full disclosure.</a>
+        We earn an Amazon affiliate commission when you buy through our links,
+        so we have a financial interest in <em>some</em> link being clicked.
+        We pick gear based on what we actually use; if a product isn't worth
+        buying, we just don't write about it. <a href="/disclosure/">Full disclosure here.</a>
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I send you photos of my setup for feedback?</h3>
+      <p>
+        Yes — that's the most useful thing you can do. Photos of your cage,
+        bin, light positioning, and a hygrometer reading help us actually
+        diagnose problems instead of guessing. Send them to the email above.
       </p>
     </div>
   </section>
@@ -90,34 +105,34 @@ permalink: /contact/
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How can I buy a product?",
+        "name": "Can BSF really be raised indoors year-round in a cold climate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "All products on our site are available through Amazon. Simply click on any product to be taken to its Amazon listing where you can complete your purchase."
+          "text": "Yes. Peer-reviewed protocols document successful low-cost, year-round laboratory rearing, and hobbyists do it in cold-climate basements with off-the-shelf gear. The operating constraint is the cage microclimate (25-32 C, 50-60% RH, 12 h of bright full-spectrum light), not outdoor weather."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you ship internationally?",
+        "name": "Do I need a UV reptile bulb, or will a regular halogen work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Shipping depends on the individual product and Amazon's policies. Check the product page on Amazon for your region's availability."
+          "text": "A quartz halogen worklight with the protective glass removed passes enough UVA to trigger BSF mating - Tomberlin and Sheppard 2010 measured roughly 61% of sunlight efficacy. Reptile UVA/UVB bulbs also work, and BSF-tuned LEDs outperformed halogen in controlled tests."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I return a product?",
+        "name": "How big does the love cage need to be?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Return policies are determined by Amazon. Check the product listing for specific return information."
+          "text": "The often-cited benchmark is a 1.5 m vertical flight column for male display behavior, but hobbyist setups run successfully in 60-120 cm cages. A 48 in butterfly tent is a workable starter size for under 200 adults."
         }
       },
       {
         "@type": "Question",
-        "name": "Are your recommendations unbiased?",
+        "name": "Are recommendations on this site unbiased?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We choose products based on quality and value. Our affiliate relationship with Amazon means we earn a commission from sales, but this doesn't influence our recommendations."
+          "text": "We earn an Amazon affiliate commission on link clicks. We pick gear based on what we actually use; if a product is not worth buying, we do not write about it."
         }
       }
     ]
@@ -125,17 +140,10 @@ permalink: /contact/
   </script>
 
   <section class="contact-form-section">
-    <h2>Send us a Message</h2>
-    {# AI AGENT: Set up a contact form using Formspree (free tier), Basin, or similar.
-       Uncomment and update the form below with your service's endpoint.
-
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    #}
-    <p class="note">Contact form coming soon. In the meantime, reach out via email above.</p>
+    <h2>Send a message</h2>
+    <p class="note">
+      Contact form coming soon. In the meantime, email
+      <a href="mailto:hello@bsfindoors.com">hello@bsfindoors.com</a>.
+    </p>
   </section>
 </article>

@@ -1,15 +1,17 @@
 ---
 layout: base.njk
-title: Home
-description: "Curated product recommendations and expert advice. Browse our store for the best deals on Amazon."
+title: Year-round indoor black soldier fly farming, no greenhouse required
+description: "Firsthand guides, gear reviews, and breeding protocols for keeping a self-sustaining black soldier fly larvae colony indoors in cold climates — including indoor mating, lighting, prepupae self-harvest, and feedstock troubleshooting."
 bodyClass: home
 permalink: /
 ---
 
-{# AI AGENT: The homepage is your most important page for conversions.
-   Make it compelling, specific to your niche, and action-oriented.
-   Don't be generic — speak directly to your audience's pain points and desires.
-   Feel free to completely restructure this page for your niche. #}
+<!-- Coming-soon banner — remove once first 10–15 articles are live -->
+<aside class="status-banner">
+  <strong>Site coming together.</strong>
+  We're in the middle of running a fresh indoor cycle — pupation, eclosion, mating, oviposition.
+  First articles drop as the cycle does. <a href="/about/">Why this site exists →</a>
+</aside>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -20,15 +22,25 @@ permalink: /
       Black soldier flies are tropical insects. Most cold-climate operators give up
       after their first overwintering attempt — adults won't mate without sun-equivalent
       light, larvae chill out below 60&nbsp;°F, and outdoor bins freeze. This site
-      documents an indoor rig that closes the loop: a quartz worklight as a
-      mating-trigger, a mesh love cage on a heat mat, a bin on substrate, a
-      self-harvest ramp into a collection cup. Built and run from a 5b homestead.
+      documents an indoor rig that closes the loop: a quartz worklight as the
+      mating trigger, a mesh love cage thermostat-controlled to 28&nbsp;°C, a self-harvest
+      bin, and a separate pupation chamber. Built and run from a basement in
+      USDA Zone 5b.
     </p>
     <p class="hero-ctas">
-      <a href="/blog/?tag=setup" class="btn btn-primary">See the indoor setup</a>
-      <a href="/store/?category=starter-kits" class="btn btn-secondary">Starter kit gear</a>
+      <a href="/about/" class="btn btn-primary">How this works</a>
+      <a href="/store/?category=starter-kits" class="btn btn-secondary">Indoor starter gear</a>
     </p>
   </div>
+  <figure class="hero-figure">
+    <img
+      src="/images/setup/web/self-harvest-ramp-prepupae-1600.jpg"
+      srcset="/images/setup/thumb/self-harvest-ramp-prepupae-480.jpg 480w, /images/setup/web/self-harvest-ramp-prepupae-1600.jpg 1600w"
+      sizes="(max-width: 700px) 100vw, 700px"
+      alt="Black soldier fly prepupae crawling up the self-harvest ramp inside the indoor bin"
+      width="1600" height="auto" loading="eager">
+    <figcaption>Prepupae self-harvesting up the migration ramp — captured from the live indoor rig.</figcaption>
+  </figure>
 </section>
 
 <!-- Category Grid — auto-populated from store.json

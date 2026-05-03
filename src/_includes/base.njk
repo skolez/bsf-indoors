@@ -35,17 +35,12 @@
   {# RSS feed for blog — enables content aggregators and feed readers #}
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Blog" href="{{ site.url }}/feed.xml">
 
-  {# Favicons — AI AGENT: Replace this inline SVG with your brand's favicon files.
-     Add favicon.ico, favicon-16.png, favicon-32.png, favicon-192.png, apple-touch-icon.png
-     to src/ and uncomment the link tags below. The inline SVG is a placeholder. #}
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232c5f2d'/><text x='16' y='24' font-size='22' text-anchor='middle' fill='white'>A</text></svg>">
-  {#
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  {# Favicons — SVG primary, PNG fallbacks for older browsers and touch icons #}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  #}
 
   {# Google Fonts — AI AGENT: Update this URL for your chosen fonts #}
   <link rel="preconnect" href="https://fonts.googleapis.com">

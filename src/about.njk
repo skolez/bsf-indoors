@@ -1,67 +1,108 @@
 ---
 layout: base.njk
-title: About Us
-description: "Learn about our mission, expertise, and how we choose the products we recommend."
+title: About
+description: "BSF Indoors documents a year-round black soldier fly colony run entirely indoors in USDA Zone 5b — gear, protocols, and what actually works at hobbyist scale."
 bodyClass: about
 permalink: /about/
 ---
 
-{# AI AGENT: Rewrite this entire page to tell YOUR niche's story.
-   The about page builds trust — critical for affiliate conversions.
-   Include:
-   - A genuine-sounding founder story (who you are, why you started)
-   - Your expertise and credentials in the niche
-   - Your product selection methodology
-   - Affiliate disclosure (legally required)
-
-   Don't use generic copy. Make it specific, personal, and credible. #}
-
 <article class="page-content">
-  <h1>About {{ site.name }}</h1>
+  <h1>About BSF Indoors</h1>
 
   <section>
-    <h2>Our Mission</h2>
-    {# AI AGENT: Replace this with a mission statement specific to your niche and audience. #}
+    <h2>What this site is</h2>
     <p>
-      {{ site.name }} is dedicated to helping people find the best products
-      through honest, research-backed recommendations.
+      BSF Indoors documents a black soldier fly larvae (BSFL) colony kept
+      <strong>year-round indoors</strong> in Cache Valley, Utah — USDA Zone 5b,
+      ~4,500 ft elevation, where outdoor BSF is a no-go from October through
+      April. Every guide, gear pick, and protocol on this site comes from a
+      working rig: a butterfly-mesh love cage, a quartz halogen worklight as
+      the indoor mating lamp, a self-harvest larvae bin, and a separate
+      pupation chamber.
+    </p>
+    <p>
+      The site exists because most BSF resources are written for tropical or
+      sub-tropical climates and quietly assume sunlight, ambient warmth, and
+      humidity that cold-climate operators don't get for half the year.
+      What works in Florida doesn't always work in a basement at 4,500 ft.
     </p>
   </section>
 
   <section>
-    <h2>Who We Are</h2>
-    {# AI AGENT: Write a compelling founder story. Include real-sounding details
-       about how you got into this niche and why you're passionate about it. #}
+    <h2>Why "indoor" gets its own site</h2>
     <p>
-      We started {{ site.name }} because finding quality products shouldn't be
-      so hard. With so many options available, we believe expert curation
-      makes all the difference.
-    </p>
-  </section>
-
-  <section>
-    <h2>How We Make Recommendations</h2>
-    <p>
-      Every product we recommend is chosen because we believe it offers genuine value.
-      We consider:
+      Three things change once you commit to an indoor colony:
     </p>
     <ul>
-      <li>Quality and durability</li>
-      <li>Value for money</li>
-      <li>Customer reviews and feedback</li>
-      <li>Real-world performance</li>
-      <li>Availability and shipping</li>
+      <li>
+        <strong>Mating without sunlight.</strong> Adults won't copulate without
+        the right wavelengths and intensity. A cheap halogen worklight with the
+        UV filter glass removed gets you ~61% of natural sunlight efficacy
+        (Tomberlin &amp; Sheppard 2010) — but only with the right distance,
+        photoperiod, and cage geometry.
+      </li>
+      <li>
+        <strong>Climate the flies, not the room.</strong> The cage interior
+        needs to hold 25–32&nbsp;°C and 50–60% RH. In a Cache Valley basement
+        running 22&nbsp;°C and 28% RH, that's a microclimate problem, not a
+        room-thermostat problem. Different gear, different approach.
+      </li>
+      <li>
+        <strong>Smell, escapees, and shared rooms.</strong> Indoor BSF lives
+        next to your network rack, your laundry, or your spare bedroom. The
+        operational decisions look completely different from "set up a barrel
+        in the backyard."
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How recommendations get made here</h2>
+    <p>
+      The product picks on this site come from one of three places:
+    </p>
+    <ol>
+      <li><strong>In use on the rig.</strong> If we recommend a worklight, hygrometer, or self-harvest bin, we own it and it's running right now. Photos in the guides are of the actual unit.</li>
+      <li><strong>Tested and rejected.</strong> When something didn't work, we say so and document why. Failure modes are at least as useful as wins.</li>
+      <li><strong>Cited from peer-reviewed entomology and university extensions.</strong> Numbers in the guides (temperature, humidity, lux, ramp angle, pupation time) trace back to specific papers in our knowledge base — Tomberlin, Sheppard, Bertinetti, Diener, Oonincx, Hoc, and the FAO/Eawag field manuals.</li>
+    </ol>
+    <p>
+      Anything that's <em>not</em> from one of those three sources is flagged as
+      such, and we generally don't write about it until we've used it.
+    </p>
+  </section>
+
+  <section>
+    <h2>What's on the site</h2>
+    <ul>
+      <li><a href="/blog/?tag=setup">Indoor setup guides</a> — the love cage, the worklight, humidity, where to put it all in your house.</li>
+      <li><a href="/blog/?tag=breeding">Breeding protocols</a> — pupation, eclosion, mating, oviposition, separating eggs.</li>
+      <li><a href="/store/">Gear store</a> — the actual hardware in use, organized by what it does in the rig.</li>
+      <li>The <a href="https://github.com/skolez/bsf-indoors/blob/main/agents/sources.md">primary source catalog</a> — the published research the guides cite.</li>
     </ul>
   </section>
 
   <section class="affiliate-disclosure-section">
-    <h2>Affiliate Disclosure</h2>
+    <h2>Affiliate disclosure</h2>
     <p>
-      {{ site.name }} is a participant in the Amazon Services LLC Associates Program.
-      We earn a small commission when you purchase through our links at no extra cost to you.
+      BSF Indoors is a participant in the Amazon Services LLC Associates
+      Program. When you buy gear through our links, Amazon pays us a small
+      commission at no extra cost to you. That commission funds the rig and
+      the writing. It does not change what we recommend — anything we wouldn't
+      buy ourselves, we don't recommend, regardless of what it pays.
     </p>
     <p>
       <a href="/disclosure/">Read our full affiliate disclosure here.</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Part of a larger project</h2>
+    <p>
+      BSF Indoors is one of several specialized homestead-anchored sites
+      running on shared infrastructure, alongside <a href="https://cachevalleybees.com">Cache Valley Bee Supply</a> (beekeeping)
+      and forthcoming sites for vermiculture, mealworms, and crickets.
+      Different insect, same operating principle: write from doing, not from research.
     </p>
   </section>
 </article>

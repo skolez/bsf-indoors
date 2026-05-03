@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BSF Indoors">
+  <rect width="64" height="64" rx="10" fill="#1f2a3a"/>
+  <!-- stylized soldier-fly silhouette: body + two wings -->
+  <g fill="#d8a64a">
+    <!-- abdomen -->
+    <ellipse cx="32" cy="40" rx="6.5" ry="14"/>
+    <!-- thorax -->
+    <ellipse cx="32" cy="22" rx="5.5" ry="6"/>
+    <!-- head -->
+    <circle cx="32" cy="13" r="3.5"/>
+  </g>
+  <g fill="#c97b3a" opacity="0.9">
+    <!-- left wing -->
+    <ellipse cx="22" cy="28" rx="9" ry="4.5" transform="rotate(-22 22 28)"/>
+    <!-- right wing -->
+    <ellipse cx="42" cy="28" rx="9" ry="4.5" transform="rotate(22 42 28)"/>
+  </g>
+</svg>

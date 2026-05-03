@@ -22,12 +22,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
-  // AI AGENT: When you add favicon files, uncomment the passthrough copies below.
-  // eleventyConfig.addPassthroughCopy("src/favicon.ico");
-  // eleventyConfig.addPassthroughCopy("src/favicon-16.png");
-  // eleventyConfig.addPassthroughCopy("src/favicon-32.png");
-  // eleventyConfig.addPassthroughCopy("src/favicon-192.png");
-  // eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/favicon-16.png");
+  eleventyConfig.addPassthroughCopy("src/favicon-32.png");
+  eleventyConfig.addPassthroughCopy("src/favicon-192.png");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
   // ===== FILTERS =====
 

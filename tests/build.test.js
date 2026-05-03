@@ -315,9 +315,11 @@ describe('Build Output — Internal Links', () => {
 describe('Build Output — Blog', () => {
   test('blog index lists posts', () => {
     const html = readBuilt('blog/index.html');
-    // Should contain at least a link to the example post or "Coming Soon"
-    const hasPost = html.includes('example-post') || html.includes('Coming Soon');
-    expect(hasPost).toBe(true);
+    // Should either link to at least one rendered post (`/blog/<slug>/`) or
+    // show a "Coming Soon" placeholder when no posts exist yet.
+    const hasPostLink = /href=["']\/blog\/[^"'/]+\//.test(html);
+    const hasComingSoon = html.includes('Coming Soon');
+    expect(hasPostLink || hasComingSoon).toBe(true);
   });
 
   test('blog posts have Article structured data', () => {

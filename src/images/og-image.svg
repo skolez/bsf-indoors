@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="BSF Indoors — year-round black soldier fly farming, no greenhouse required">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f2a3a"/>
+      <stop offset="100%" stop-color="#0f1622"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d8a64a"/>
+      <stop offset="100%" stop-color="#c97b3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- corner accent bar -->
+  <rect x="60" y="60" width="120" height="6" fill="url(#accent)"/>
+  <!-- title -->
+  <text x="60" y="180" fill="#faf7f2" font-family="Fraunces, Lora, Georgia, serif" font-weight="700" font-size="84">BSF Indoors</text>
+  <!-- tagline -->
+  <text x="60" y="240" fill="#d8a64a" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="36">Year-round black soldier fly farming,</text>
+  <text x="60" y="288" fill="#d8a64a" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="36">no greenhouse required.</text>
+  <!-- description -->
+  <text x="60" y="380" fill="#f3ede2" font-family="Inter, system-ui, sans-serif" font-size="26" opacity="0.85">Firsthand guides, gear reviews, and breeding protocols</text>
+  <text x="60" y="416" fill="#f3ede2" font-family="Inter, system-ui, sans-serif" font-size="26" opacity="0.85">from a working indoor colony in USDA Zone 5b.</text>
+  <!-- mark -->
+  <g transform="translate(960 400)" opacity="0.95">
+    <ellipse cx="0" cy="40" rx="40" ry="80" fill="#d8a64a"/>
+    <ellipse cx="0" cy="-40" rx="32" ry="36" fill="#d8a64a"/>
+    <circle cx="0" cy="-105" r="22" fill="#d8a64a"/>
+    <ellipse cx="-60" cy="-10" rx="55" ry="26" transform="rotate(-22 -60 -10)" fill="#c97b3a" opacity="0.85"/>
+    <ellipse cx="60" cy="-10" rx="55" ry="26" transform="rotate(22 60 -10)" fill="#c97b3a" opacity="0.85"/>
+  </g>
+  <!-- footer URL -->
+  <text x="60" y="565" fill="#faf7f2" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="24">bsfindoors.com</text>
+</svg>
