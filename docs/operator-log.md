@@ -16,6 +16,48 @@ aren't ready. The rough-draft history is more valuable than a polished summary.
 - **Rig location:** indoor utility / basement area, near electrical panel and water heater. Carpeted floor (legacy). Network gear in same room.
 - **Considered alternatives:** spare bedroom (rejected — smell absorption, escapees, electrical load); server room (preferred long-term — already warm, ventilated, no carpet).
 
+## Prior BSF experience (pre-2026)
+
+The current indoor rig is not the operator's first BSF attempt. The history
+across two states is the reason the site exists at all — every "why indoor?"
+section in the editorial cites back to this experience.
+
+### South Carolina — natural BSF endemic to climate
+
+- Operator ordered initial BSF stock from a supplier late winter.
+- Before the order arrived, **food waste left outside drew in BSF naturally.**
+- Outdoor lure works in SC (USDA 7b/8a, hot humid summers, mild winters). BSF is endemic.
+- **Lesson:** in BSF's natural range, you don't actually need to order the species. The lure handles it.
+
+### Move to Idaho — same playbook, different result
+
+- Same outdoor-food-waste lure attempted after the move.
+- **Got house fly maggots instead of BSF.**
+- Latitude is north of natural BSF range; outdoor populations are not present to recruit from.
+- **This is the original "indoor or nothing" data point** for the operator and the foundational reason this site has its editorial position. *Outdoor BSF in Idaho/Cache Valley does not work* — which means a cold-climate BSF site has to be an indoor BSF site, period.
+
+### First Idaho indoor attempt (pre-2026)
+
+- Mail-ordered BSF larvae from Amazon. Worked through warm months.
+- Cold weather arrived; needed to overwinter.
+- **Plan:** feed most of the population to the chickens, retain ~50 individuals in a wine cooler to test whether a small population could overwinter under controlled conditions.
+- **Outcome:** wife fed the entire colony to the chickens due to a miscommunication. Overwintering test never ran.
+- **Lesson encoded:** label the chicken-feed bin and the breeding-stock bin distinctly. "These are the chicken bugs; those are the breeding bugs" needs to be a posted, labeled, agreed-upon household convention. (Yes, this is a real article waiting to be written.)
+
+### 2026 spring restart — current cycle
+
+- Ordered BSF stock early spring 2026, before nighttime temps were consistently above freezing.
+- No outdoor option yet (nights still <40 °F); indoor rig not fully built when stock arrived.
+- Pivoted to building the full indoor rig in real time: butterfly love cage, halogen worklight (UV filter removed), Inkbird thermostat, larvae bin with self-harvest ramp.
+- **This is the cycle the rest of this log covers from here forward.**
+
+### Lessons encoded from the full history
+
+1. **Cache Valley / southern Idaho is outside natural BSF colonization range.** Outdoor lure attracts house flies, not BSF. Indoor or mail-order is the only viable path here. *(Editorial: anchor article — "Why outdoor BSF doesn't work in cold climates: an Idaho food-waste experiment.")*
+2. **Mail-ordering BSF in early spring traps you in a gap year.** No outdoor option yet, indoor rig not yet built. Either match the order to outdoor viability (~late June–August in 5b) or have the indoor rig fully built at order time. *(Editorial: "When to mail-order BSF in a cold climate.")*
+3. **Communicate the colony to the rest of the household.** Anything edible by chickens is at risk of becoming chicken food. Label everything. *(Editorial: the chicken-feed-incident post.)*
+4. **40 °F overnight lows are below the BSF survival floor.** Even in 5b summer, viable outdoor windows are short (late June through August at best). The temperature regime that prevents natural colonization also prevents outdoor cage success. *(Editorial: "Can I just put my BSF cage outside? — what 40 °F nights actually do.")*
+
 ## Rig spec — as of 2026-04-26
 
 ### Hardware in service
