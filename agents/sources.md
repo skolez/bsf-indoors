@@ -147,6 +147,12 @@
     - http://www.evoconsys.com/blog
     - Tomberlin-affiliated company; technical posts on production.
 
+31a. **EVO Conversion Systems — SPR AgTech BSF Mating Light** [L]
+    - http://www.evoconsys.com/products.html
+    - Production-grade BSF-tuned multi-channel LED ($180, ordered 2026-04-26 by site operator). Direct commercial implementation of Tomberlin & Sheppard 2010 (#1) + Hoc 2019/2020 (#4, #5) photoreceptor work. UVA + blue + green channels matched to BSF compound-eye sensitivity. Multi-thousand-hour rated, runs cool, no fingerprint failure mode.
+    - Treated as a Tier 2 source because it's a commercial product, but the underlying spec is Tier 1 research. Will be the gold-standard reference once on-rig data accumulates.
+    - Scores: RAG 3 / Reg 3 / Aud 3
+
 32. **EnviroFlight (Marysville, KY)** [F]
     - Industry production reference. Useful for "what does scaled production look like" framing.
 
